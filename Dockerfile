@@ -14,6 +14,9 @@ RUN add-apt-repository \
        "deb [arch=amd64] https://download.docker.com/linux/debian \
        $(lsb_release -cs) \
        stable"
-RUN apt-get update && apt-get install -y docker-ce-cli && apt-get clean
+RUN apt-get update
+RUN apt-get install -y docker-ce-cli
+RUN apt-get install -y postgresql-client
+RUN apt-get clean
 
 USER jenkins
